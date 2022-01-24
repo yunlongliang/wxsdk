@@ -1,18 +1,18 @@
 package wework
 
 
-import(
-	"crypto/sha1"
+import (
+	"bytes"
 	"crypto/aes"
 	"crypto/cipher"
-	"bytes"
-	"strings"
-	"fmt"
-	"sort"
+	"crypto/sha1"
 	"encoding/base64"
-	"math/rand"
 	"encoding/binary"
 	"encoding/xml"
+	"fmt"
+	"math/rand"
+	"sort"
+	"strings"
 )
 
 const letterBytes = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -52,8 +52,8 @@ type CryptError struct{
 	ErrMsg string
 }
 
-func NewCryptError(err_code int, err_msg string) * CryptError{
-	return &CryptError{ErrCode:err_code, ErrMsg: err_msg}
+func NewCryptError(errCode int, errMsg string) * CryptError{
+	return &CryptError{ErrCode:errCode, ErrMsg: errMsg}
 }
 
 type WXBizMsg4Recv struct {
